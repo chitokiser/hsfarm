@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <link rel="shortcut icon" href="https://i.ibb.co/3YqKwff/bg.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="\css\main.css">
+    <title>환영합니다 홍산농원 입니다</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="\images\logo\logo58x52.png" alt="" width="58" height="62">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            
+                    <li class="nav-item">
+                        <a class="nav-link" href="../mypage.html">My page</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        토큰거래소
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a class="dropdown-item" href="../cyadex.html">CYA</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../hut.html">HUT</a></li>
+              
+                      </ul>
+                    </li>  
+
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      실물자산거래소
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/caravan.html">카라반</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/glam.html">글램핑</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/gazebo.html">가제보</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/camping.html">캠핑사이트</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/farm.html">산림텃밭</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/tree.html">나무</a></li>
+                      </ul>
+                    </li>  
+
+                    
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      토큰벌기
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/real1.html">보물찾기</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/real1.html">이자농장</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/real1.html">게임</a></li>
+                      </ul>
+                    </li>  
+                    
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    지갑연결
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a class="dropdown-item" href="../memberjoin.html">등록</a></li>
+                    </li>
+                    <li class="dropdown-item"><a class="dropdown-item" href="#" onclick="addTokenCya()">스테이블토큰 추가</a>
+                  </li>
+                 
+                  <li class="dropdown-item"><a class="dropdown-item" href="#" onclick="addTokenMut()">홍산유틸리티토큰 추가</a>
+                </li>
+               
+                  </ul>
+                </li>
+
+                </ul>
+       
+            </div>
+        </div>
+    </nav>
+    
+  <!--Head up to here -->
+  
+  
+  <body>
+
+          <div class="alert alert-secondary" role="alert">
+          
+            <div class="container-box">
+              <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                <div class="col">
+                  <div class="p-3 border bg-light">1BNB=$<span id="bPrice">-</span></div>
+                </div>
+               
+                <div class="col">
+                  <div class="p-3 border bg-light">1CYA:$1</div>
+                </div>
+                <div class="col">
+                  <div class="p-3 border bg-light">1CYA: <span id="cPrice2">-</span>BNB</div>
+                </div>
+                <div class="col">
+                  <div class="p-3 border bg-light">BNB TVL: <span id="Tvl">-</span>BNB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--This is the dashboard -->
+      
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark" type="button">My page</button>
+            </div>
+            <li class="list-group-item">지갑연결>등록하면 레벨1이 됩니다 </li>
+     
+                <button class="btn btn-outline-success" id="basic-addon2" type="submit" onclick="MemberLogin()">
+                  나의상태보기 [지갑연결]
+                </button>
+                <li class="list-group-item">레벨: <span id="Mylev"></span></li>
+                <li class="list-group-item">경험치: <span id="Exp"></span>exp</li>
+                <li class="list-group-item">다음레벨업에 필요한 경험치: <span id="Expneeded"></span>exp</li>
+                <li class="list-group-item">포인트 = <span id="Mypoint">-</span>p</li>
+                <li class="list-group-item">멘토 = <span id="Mymento">-</span></li>
+                <li class="list-group-item"> <button type="button" class="btn btn-outline-dark position-relative" cursor:
+                    pointer; onclick="Levelup()">
+                    Level up
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" id="Mylev2">-</span></button>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" id="LevelBar" role="progressbar"
+                      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    </div>
+                </li>
+                <P></P>
+              </div>
+              <div><span style="color:red">1 point=1CYA</span></div>
+               <button class="btn btn-outline-success" type="submit" onclick="Bonuswithdraw()">포인트인출</button>
+               <div class="input-group mb-3">
+                <li class="list-group-item">포인트 충전 </li>
+                <input type="text" id="chargeAmount" class="form-control" placeholder="충전할 금액을 입력하세요 (1CYA=1P)" aria-label="CYA"
+                  aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2" style="cursor: pointer;" onclick="Charge()">Charge points</span>
+               
+              </div>
+    
+      <!--Start footer -->
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p><a class="nav-link" href="https://twitter.com/choecheolung8">MetaDAO X</a></p>
+        <p>We do not collect personal information</p>
+        <p><a class="nav-link" href="https://t.me/cyadaokorea">Telegram</a></p>
+   <!-- End footer -->
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript"></script>  
+<script src="../src/topinfo.js"></script> 
+<script src="../src/mypage.js"></script> 
+  </body>
+</html>
