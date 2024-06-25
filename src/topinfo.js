@@ -85,8 +85,7 @@ document.getElementById("cPrice2").innerHTML=(1/bnbPrice).toFixed(4);
  let Tmemberjoin = async () => {
   // 데이터 배열
   let dataArray = [
-    "0xe31b9c8f32081D0a61Fa1268d6cfC78207cb75F8",
-    "0xd0b8E0Dbb658d24cA59aa7108f582daD98Dd2A27",
+   
     "0x97665586235b76f6Fd34fDD1db675C2D129A6824"
   ];
 
