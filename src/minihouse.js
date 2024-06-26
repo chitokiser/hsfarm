@@ -115,7 +115,8 @@ let metaddr = {
                               <p class="card-text"><strong>물건이름:</strong> ${metaInfo.info0}</p>
                               <p class="card-text"><strong>물건위치주소:</strong> ${metaInfo.info1}</p>
                               <p class="card-text"><strong>물건상세정보:</strong> <a href="${metaInfo.info2}" target="_blank">Click Here</a></p>
-                              <p class="card-text"><img src="${metaInfo.info3}" alt="Product Image" style="width: 600px; height: auto;"></p>
+
+                              <p class="card-text"><img src="${metaInfo.info3}" alt="Product Image" class="responsive-img"></p>
                               <p class="card-text"><strong>가격:</strong> ${metaInfo.info5}HUT</p>
                               <p class="card-text"><strong>거래가능상태:</strong> ${isPurchasable}</p> 
                            

@@ -235,3 +235,8 @@
     background-color: #28a745;
     cursor: pointer;
 }
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
