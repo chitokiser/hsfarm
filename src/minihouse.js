@@ -118,6 +118,7 @@ let metaddr = {
 
                               <p class="card-text"><img src="${metaInfo.info3}" alt="Product Image" class="responsive-img"></p>
                               <p class="card-text"><strong>가격:</strong> ${metaInfo.info5}HUT</p>
+                               <p class="card-text"><strong>오너:</strong> ${metaInfo.info7}HUT</p>
                               <p class="card-text"><strong>거래가능상태:</strong> ${isPurchasable}</p> 
                            
                     
