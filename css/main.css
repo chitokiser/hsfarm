@@ -240,3 +240,30 @@
   max-width: 100%;
   height: auto;
 }
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.purchase-form-container {
+  margin-top: 20px;
+}
+
+.purchase-form {
+  display: flex;
