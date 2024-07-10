@@ -73,14 +73,17 @@ let contractAddress = {
     let mymento = (await cyamemContract.getmento(await signer.getAddress()));  
     let levelexp = (2**mylev)*10000;
     let my = await cyamemContract.myinfo(await signer.getAddress());
+    let mymenty =  (await my[5]);
     let myexp =  (await my[6]);
     let mybonus =  (await my[1]);
+    document.getElementById("Mymenty").innerHTML = (mymenty);
     document.getElementById("Mylev").innerHTML = (mylev);
     document.getElementById("Mylev2").innerHTML = (mylev);
     document.getElementById("Exp").innerHTML =  (myexp);
     document.getElementById("Expneeded").innerHTML = (levelexp);
     document.getElementById("Mypoint").innerHTML =  (mybonus/1e18).toFixed(4);
     document.getElementById("Mymento").innerHTML = (mymento);
+    document.getElementById("Mymenty").innerHTML = (mymenty);
     
     document.getElementById("LevelBar").style.width = `${myexp/levelexp*100}%`; // CHECK:: 소수점으로 나오는 것 같아 *100 했습니다. 
 

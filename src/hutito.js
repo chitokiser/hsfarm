@@ -131,7 +131,7 @@ let HutLogin = async () => {
   let idepo =  (await my[1]);
   let icerti =  (await my[2]);
   document.getElementById("Mymento").innerHTML = (imento);
-  document.getElementById("Myfee").innerHTML = (idepo/2e18);
+  document.getElementById("Myfee").innerHTML = (idepo/2e18).toFixed(2);
   document.getElementById("Mentobool").innerHTML =  (icerti);
  
 };

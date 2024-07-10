@@ -117,7 +117,7 @@
          
           
             <li class="list-group-item">생태계에서 쓸 수 있는 토큰을 HUT소유량과 비례하여  일주일에 1회 배당합니다</li>
-            <li class="list-group-item">회원탈퇴시 HUT을 매도하여 회비를 회수합니다</li>
+            <li class="list-group-item">레벨5이상이고 거래상태가 3이면 HUT을 매도할 수 있습니다</li>
          
           
               <link href="../css/dashboard.css" rel="stylesheet">
@@ -146,7 +146,9 @@
             <div class="d-grid gap-2">
               <button class="btn btn-dark" type="button">HUT 정보</button>
             </div>
-             
+              <li class="list-group-item">거래가능상태: <span id="Act">-</span> </li>
+              <p class="small-text">상태 설명 1=매수가능 2=배당가능 3=매도가능</p>
+            
               <li class="list-group-item">스마트컨트렉트 CYA잔고: <span id="Cyabal">-</span>CYA</li>
               <li class="list-group-item">스마트컨트렉트 HUT 잔고: <span id="Mutbal">-</span>hut</li>
               <li class="list-group-item">hut 유통량: <span id="Mutcir">-</span>hut</li>
@@ -181,7 +183,7 @@
                   aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2" style="cursor: pointer;" onclick="Buymut()">hut매수</span>
               </div>
-              <div><span style="color:red">레벨5이상이어야 hut을 매도할 수 있습니다</span></div>
+              <div><span style="color:red">레벨5이상이고 거래가능상태가 3이어야 hut을 매도할 수 있습니다</span></div>
    
             
               <div class="input-group mb-3">
@@ -216,7 +218,7 @@
                       <li class="list-group-item">나의멘토: <span id="Mymento">-</span></li>
                       <li class="list-group-item">포인트변경가능점수: <span id="Myfee">-</span>점</li>
                       <li class="list-group-item">멘토자격여부: <span id="Mentobool">-</span></li>
-                      <button id="getMentyButton">Get Menty List</button>
+                      <button id="getMentyButton">프리세일 멘티 리스트 가져오기</button>
                   
                       <ul id="Mymenty"></ul>
                       <button class="btn btn-outline-success" type="submit" onclick="Withdraw()">

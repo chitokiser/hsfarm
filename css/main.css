@@ -267,3 +267,8 @@ body {
 
 .purchase-form {
   display: flex;
+}
+
+.small-text {
+  font-size:0.8em; /* 글자 크기를 80%로 설정 */
+}

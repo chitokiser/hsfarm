@@ -17,6 +17,7 @@
           "function g10() public view virtual returns(uint256)",
           "function allow() public view returns(uint256)",
           "function sum() public view returns(uint256)",
+          "function act() public view returns(uint256)",
           "function allowt(address user) public view returns(uint256)",
           "function g11() public view virtual returns(uint256)",
           "function getprice() public view returns (uint256)",
@@ -43,13 +44,13 @@
        let mutcir = await cyabankContract.g11();  //mut유통량
        let iprice = await cyabankContract.getprice();
        let iallow = await cyabankContract.allow();
-     
+       let iact = await cyabankContract.act();  //거래가능상태
        document.getElementById("Cyabal").innerHTML = (cyabal/1e18).toFixed(2);
        document.getElementById("Mutbal").innerHTML = (mutbal);
        document.getElementById("Mutcir").innerHTML = (mutcir);
        document.getElementById("Mprice").innerHTML = (iprice/1e18).toFixed(2);
        document.getElementById("Mallow").innerHTML = (iallow/1e18).toFixed(8);
-     
+       document.getElementById("Act").innerHTML = (iact);
      };
   
      topMut();
