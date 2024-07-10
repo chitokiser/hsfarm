@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let metaddr = {
-        metmarket: "0x1306796a10F7F39b0fecA80EB7f983660eAa47c6" // product
+        metmarket: "0x08b04C814ADb3C9437F3d0123483D6ddcAd597eD" // cyatoken trade
     };
 
     let metabi = {
@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "function g1() public view virtual returns(uint256)",
             "function pid() public view virtual returns(uint256)",
             "function bid() public view virtual returns(uint256)",
-            "function metainfo(uint _num) public view returns (string memory,string memory,string memory,uint256,uint256)",
-            "function bs(uint _num) public view returns (string memory,string memory,uint256,uint256,uint256,uint8,uint256,address)",
+            "function depowithdraw() public",
+            "function metainfo(uint _num) public view returns (string memory,string memory,string memory,uint256,uint256,uint256)",
+            "function bs(uint _num) public view returns (uint256,uint256,uint8,uint256,address)",
         ],
     };
 
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("Pid").innerHTML = ipid;
         document.getElementById("Bid").innerHTML = ibid;
-        document.getElementById("Hutbal").innerHTML = ibal;  // 누적 매출
+        document.getElementById("Cyabal").innerHTML = ibal;  // 누적 매출
     };
 
     async function getMetaInfoByNum(contract, _num) {
@@ -35,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 info1: metaInfo[1], // 물건 정보 상세 페이지
                 info2: metaInfo[2], // 물건 사진
                 info3: metaInfo[3], // 물건 재고
-                info4: metaInfo[4], // 가격
+                info4: metaInfo[4], // 수당비율
+                info5: metaInfo[5], // 가격
             };
         } catch (error) {
             console.error("Error fetching meta info:", error);
@@ -64,18 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p class="card-text"><strong>물건 상세 정보:</strong> <a href="${metaInfo.info1}" target="_blank">Click Here</a></p>
                                 <p class="card-text"><img src="${metaInfo.info2}" alt="Product Image" class="responsive-img"></p>
                                 <p class="card-text"><strong>남은 수량:</strong> ${metaInfo.info3}개</p>
-                                <p class="card-text"><strong>가격:</strong> ${metaInfo.info4} HUT</p>
+                                 <p class="card-text"><strong>수당비율:</strong> ${metaInfo.info4/2}%</p>
+                                <p class="card-text"><strong>가격:</strong> ${metaInfo.info5/1e18}CYA</p>
                                 <button type="button" class="btn btn-primary btn-sm mr-2" onclick="openPurchaseForm(${i})">구매하기</button>
                                 <div class="purchase-form-container" id="purchaseFormContainer${i}" style="display: none;">
                                     <form class="purchase-form">
                                         <label for="productId${i}">제품 ID:</label>
                                         <input type="text" id="productId${i}" name="productId" readonly value="${i}"><br>
-                                        <label for="buyerName${i}">구매자 이름:</label>
-                                        <input type="text" id="buyerName${i}" name="buyerName" required><br>
-                                        <label for="address${i}">배송받을 주소:</label>
-                                        <input type="text" id="address${i}" name="address" required><br>
-                                        <label for="phoneNumber${i}">전화번호:</label>
-                                        <input type="tel" id="phoneNumber${i}" name="phoneNumber" required><br>
                                         <label for="quantity${i}">구매 수량:</label>
                                         <input type="number" id="quantity${i}" name="quantity" min="1" required><br>
                                         <button type="button" onclick="submitPurchaseForm(${i})">입력 완료</button>
@@ -173,14 +170,11 @@ async function displayBuyerInfo() {
         const buyerInfoHtml = `
             <div class="buyer-info-card">
                 <h5>Buyer ID: ${buyerId}</h5>
-                <p><strong>Name:</strong> ${buyerInfo[0]}</p>
-                <p><strong>Location:</strong> ${buyerInfo[1]}</p>
-                <p><strong>Phone Number:</strong> ${buyerInfo[2]}</p>
-                <p><strong>Quantity:</strong> ${buyerInfo[3]}</p>
-                <p><strong>Price:</strong> ${buyerInfo[4]}</p>
-                <p><strong>Status:</strong> ${buyerInfo[5]}</p>
-                <p><strong>Timestamp:</strong> ${buyerInfo[6]}</p>
-                <p><strong>Buyer Address:</strong> ${buyerInfo[7]}</p>
+                <p><strong>Quantity:</strong> ${buyerInfo[0]}</p>
+                <p><strong>Price:</strong> ${buyerInfo[1]}</p>
+                <p><strong>Status:</strong> ${buyerInfo[2]}</p>
+                <p><strong>ProductID:</strong> ${buyerInfo[3]}</p>
+                <p><strong>Buyer Address:</strong> ${buyerInfo[4]}</p>
             </div>`;
 
         const infoContainer = document.getElementById("buyerInfoContainer");

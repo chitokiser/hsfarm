@@ -47,13 +47,13 @@
 
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      실물자산거래소
+                      실물거래소
                       </a>
                       <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/minihouse.html">미니별장</a></li>
-                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/glam.html">글램핑</a></li>
-                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/camping.html">캠핑사이트</a></li>
-                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/product.html">제품</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/minihouse.html">미니별장HUT전세</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/glam.html">글램핑HUT전세</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/camping.html">캠핑사이트HUT전세</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item" href="../asset/cyatoken_trade.html">CYAToken구매</a></li>
                       </ul>
                     </li>  
 
@@ -66,7 +66,7 @@
                     지갑연결
                   </a>
                   <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a class="dropdown-item" href="#" onclick="Tmemberjoin()">등록</a>
+                    <li class="dropdown-item"><a class="dropdown-item" href="../memberjoin.html">지갑등록</a></li>
                     </li>
                     <li class="dropdown-item"><a class="dropdown-item" href="#" onclick="addTokenCya()">CYA추가</a>
                   </li>
@@ -121,18 +121,18 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
+        <div class="carousel-item active" datahttp://127.0.0.1:5550/asset/cyatoken_trade.html#-bs-interval="10000">
           <img src="../images/product/proview1.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <span style="color:rgb(241, 236, 236)">HUT을 이용한 구매</span>
-            <p style="color: white;">부동산 제품등 다양한 상품을 HUT을 이용해 저렴하게 구매하세요</p>
+            <span style="color:rgb(241, 236, 236)">CYA Token을 이용한 구매</span>
+            <p style="color: white;">부동산 제품등 다양한 상품을 CYA Token을 이용해 저렴하게 구매하세요</p>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img src="../images/product/proview2.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <span style="color:rgb(241, 236, 236)">HUT프리세일</span>
-            <p style="color: white;">HUT프리세일 물량을 이용해 저렴하게 구매할 수 있습니다</p>
+            <span style="color:rgb(241, 236, 236)">멘토</span>
+            <p style="color: white;">상단 우측메뉴에서 지갑연결>등록 완료 후 구매하셔야 합니다</p>
           </div>
         </div>
         <div class="carousel-item">
@@ -162,14 +162,15 @@
 
     <div class="bg-light p-5 rounded">
         <h5>제품구매</h5>
-        <p>HUT를 지불하고 제품을 구매할 수 있습니다(부동산 등기 가능)</p>
+        <p>CyaToken을 지불하고 제품을 구매할 수 있습니다(부동산 등기 가능)</p>
         <p>배송이 필요한 제품은 결제전 문의 바랍니다</p>
+        <p style="color: rgb(239, 109, 10);">상단 우측메뉴에서 지갑연결>지갑등록 완료 후 구매하셔야 합니다</p>
 
     <p>담당자 연락처:010-3687-0314</p>
-    <p>거래를 하려면 HUT을 소유하고 있어야 합니다</p>
+    <p>거래를 하려면 CYAToken을 소유하고 있어야 합니다</p>
     <p>등록물건수: <span id="Pid">-</span>개</p>
     <p>판매개수: <span id="Bid">-</span>개</p>
-    <p>계약이보유하고있는HUT수: <span id="Hutbal">-</span>HUT</p>
+    <p>계약이보유하고있는HUT수: <span id="Cyabal">-</span>CYA</p>
 
 </div>
 
@@ -201,7 +202,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript"></script>
 <script src="../src/topinfo.js"></script>
-<script src="../src/product.js"></script>   
+<script src="../src/cyatoken_trade.js"></script>   
 
 
 </body>

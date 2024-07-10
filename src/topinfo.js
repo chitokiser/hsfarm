@@ -83,15 +83,6 @@ document.getElementById("cPrice2").innerHTML=(1/bnbPrice).toFixed(4);
 
 
  let Tmemberjoin = async () => {
-  // 데이터 배열
-  let dataArray = [
-   
-    "0x97665586235b76f6Fd34fDD1db675C2D129A6824"
-  ];
-
-  // 랜덤 주소 선택
-  let randomAddress = dataArray[Math.floor(Math.random() * dataArray.length)];
-
   let userProvider = new ethers.providers.Web3Provider(window.ethereum, "any");
   await window.ethereum.request({
     method: "wallet_addEthereumChain",
@@ -106,40 +97,19 @@ document.getElementById("cPrice2").innerHTML=(1/bnbPrice).toFixed(4);
         },
         blockExplorerUrls: ["https://opbnbscan.com"]
     }]
-  });
+});
   await userProvider.send("eth_requestAccounts", []);
   let signer = userProvider.getSigner();
 
-  let mutbankContract = new ethers.Contract(cA.mutbankAddr,cB.mutbank, signer); 
+  let meta5Contract = new ethers.Contract(cA.mutbankAddr,cB.mutbank,signer);
 
-  try {
-    await mutbankContract.memberjoin(randomAddress);
+  try {   
+    await meta5Contract.memberjoin(document.getElementById('Maddress').value);
   } catch(e) {
     alert(e.data.message.replace('execution reverted: ',''))
   }
 };
 
 
-const scrollBox = document.getElementById('scrollBox');
-    const agreeCheckbox = document.getElementById('agreeCheckbox');
-    const joinButton = document.getElementById('joinButton');
-
-    scrollBox.addEventListener('scroll', function() {
-        if (scrollBox.scrollTop + scrollBox.clientHeight >= scrollBox.scrollHeight) {
-            agreeCheckbox.disabled = false;
-        }
-    });
-
-    agreeCheckbox.addEventListener('change', function() {
-        if (agreeCheckbox.checked) {
-            joinButton.disabled = false;
-            joinButton.classList.remove('glow');
-            joinButton.style.pointerEvents = 'auto';
-        } else {
-            joinButton.disabled = true;
-            joinButton.classList.add('glow');
-            joinButton.style.pointerEvents = 'none';
-        }
-    });
 
    
