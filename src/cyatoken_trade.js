@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p class="card-text"><strong>물건 상세 정보:</strong> <a href="${metaInfo.info1}" target="_blank">Click Here</a></p>
                                 <p class="card-text"><img src="${metaInfo.info2}" alt="Product Image" class="responsive-img"></p>
                                 <p class="card-text"><strong>남은 수량:</strong> ${metaInfo.info3}개</p>
-                                 <p class="card-text"><strong>수당비율:</strong> ${metaInfo.info4/2}%</p>
+                                 <p class="card-text"><strong>수당비율:</strong> ${metaInfo.info4}%</p>
                                 <p class="card-text"><strong>가격:</strong> ${metaInfo.info5/1e18}CYA</p>
                                 <button type="button" class="btn btn-primary btn-sm mr-2" onclick="openPurchaseForm(${i})">구매하기</button>
                                 <div class="purchase-form-container" id="purchaseFormContainer${i}" style="display: none;">
